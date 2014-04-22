@@ -1,5 +1,7 @@
 # Broccoli Fixturify
 
+[![Build Status](https://travis-ci.org/rjackson/broccoli-fixturify.svg?branch=master)](https://travis-ci.org/rjackson/broccoli-fixturify)
+
 ## Usage
 
 Create a subdirectory tree with [fixturify](https://github.com/joliss/node-fixturify):
