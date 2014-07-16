@@ -7,7 +7,7 @@
 Create a subdirectory tree with [fixturify](https://github.com/joliss/node-fixturify):
 
 ```javascript
-var writeFile = require('broccoli-file-creator');
+var fixtureTree = require('broccoli-fixturify');
 
 var desiredDirectory = {
   'foo.txt': 'foo.txt contents',
