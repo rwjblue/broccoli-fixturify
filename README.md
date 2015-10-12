@@ -1,6 +1,6 @@
 # Broccoli Fixturify
 
-[![Build Status](https://travis-ci.org/rjackson/broccoli-fixturify.svg?branch=master)](https://travis-ci.org/rjackson/broccoli-fixturify)
+[![Build Status](https://travis-ci.org/rwjblue/broccoli-fixturify.svg?branch=master)](https://travis-ci.org/rwjblue/broccoli-fixturify)
 
 ## Usage
 
