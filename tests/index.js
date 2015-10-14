@@ -1,6 +1,6 @@
 'use strict';
 
-var fixtureTree = require('../index');
+var Fixturify = require('../index');
 var expect = require('expect.js');
 var rimraf = require('rimraf');
 var root = process.cwd();
@@ -24,9 +24,9 @@ describe('broccoli-file-creator', function(){
         'bar.txt': 'bar.txt contents'
       }
     }
-    var tree = fixtureTree(obj);
+    var node = new Fixturify(obj);
 
-    builder = new broccoli.Builder(tree);
+    builder = new broccoli.Builder(node);
     return builder.build().then(function(dir) {
       expect(fs.readFileSync(dir + '/foo.txt', {encoding: 'utf8'})).to.eql(obj['foo.txt']);
       expect(fs.readFileSync(dir + '/subdir/bar.txt', {encoding: 'utf8'})).to.eql(obj['subdir']['bar.txt']);

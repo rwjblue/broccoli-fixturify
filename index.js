@@ -1,23 +1,20 @@
-var fs = require('fs');
-var path = require('path');
-var Writer = require('broccoli-writer');
-var Promise = require('rsvp').Promise
-var fixturify = require('fixturify')
+var Plugin = require('broccoli-plugin');
+var fixturify = require('fixturify');
 
-Creator.prototype = Object.create(Writer.prototype);
-Creator.prototype.constructor = Creator;
-function Creator (fixture) {
-  if (!(this instanceof Creator)) return new Creator(fixture);
+Fixturify.prototype = Object.create(Plugin.prototype);
+Fixturify.prototype.constructor = Fixturify;
+function Fixturify(fixture, options) {
+  if (!(this instanceof Fixturify)) return new Fixturify(fixture, options);
+  options = options || {};
+  Plugin.call(this, [], {
+    annotation: options.annotation
+  });
 
   this.fixture = fixture;
+}
+
+Fixturify.prototype.build = function() {
+  fixturify.writeSync(this.outputPath, this.fixture);
 };
 
-Creator.prototype.write = function (readTree, destDir) {
-  var _this = this
-
-  return Promise.resolve().then(function() {
-    fixturify.writeSync(destDir, _this.fixture);
-  });
-};
-
-module.exports = Creator;
+module.exports = Fixturify;
