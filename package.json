@@ -1,6 +1,6 @@
 {
   "name": "broccoli-fixturify",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Broccoli plugin to create tree with fixturify.",
   "main": "index.js",
   "author": "Robert Jackson",
