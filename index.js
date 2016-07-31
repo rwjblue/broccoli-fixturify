@@ -1,6 +1,7 @@
 var Plugin = require('broccoli-plugin');
 var fixturify = require('fixturify');
 
+module.exports = Fixturify;
 Fixturify.prototype = Object.create(Plugin.prototype);
 Fixturify.prototype.constructor = Fixturify;
 function Fixturify(fixture, options) {
@@ -17,4 +18,3 @@ Fixturify.prototype.build = function() {
   fixturify.writeSync(this.outputPath, this.fixture);
 };
 
-module.exports = Fixturify;
