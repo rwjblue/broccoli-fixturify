@@ -19,7 +19,22 @@ var desiredDirectory = {
 }
 
 var node = new Fixturify(desiredDirectory);
+
+node.write({
+  'other.file': 'its contents',
+  'other.directory': {
+  'a.file': 'hello, i was added to the fixture'
+  }
+}); // appends the following files on the next build
+
+node.remove({
+  'foo.txt': null,
+}); // removes 'foo.txt' on the next build
+
+node.reset(); // on next build, the fixture directory is restored to "desiredDirectory"
 ```
+
+## Full Usage
 
 ## Documentation
 
